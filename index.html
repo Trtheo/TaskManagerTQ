@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Task Management System</h1>
+    
+    <form onsubmit="return false;">
+      <div class="task-input">
+        <textarea id="taskDescription" placeholder="Enter task description..." maxlength="200"></textarea>
+        <span id="charCounter">0/200</span>
+        <p id="error-message" class="error"></p>
+
+        <!-- Due Date Input -->
+        <input type="date" id="taskDueDate" required>
+
+        <!-- Priority Selection -->
+        <select id="taskPriority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+        <!-- Status Selection -->
+        <select id="taskStatus">
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <button type="button" onclick="addTask()">Add Task</button>
+      </div>
+    </form>
+
+    <!-- Search Bar -->
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search tasks..." oninput="searchTasks()">
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button onclick="resetFilters()">All Tasks</button>
+      <select id="statusFilter" onchange="applyFilters()">
+        <option value="all">All Statuses</option>
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <select id="priorityFilter" onchange="applyFilters()">
+        <option value="all">All Priorities</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+
+    <ul id="taskList" class="task-list"></ul>
+  </div>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

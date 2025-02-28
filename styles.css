@@ -1,0 +1,187 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  margin-bottom: 10px;
+  width: 30rem;
+}
+
+textarea:focus {
+  border-color: #5a67d8;
+  outline: none;
+}
+
+#charCounter {
+  font-size: 12px;
+  text-align: right;
+  color: #555;
+}
+
+/* Due Date & Priority Dropdown */
+input[type="date"],
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 16px;
+  background: #fff;
+}
+
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #5a67d8;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  margin: .8rem;
+}
+
+button:hover {
+  background: #434190;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Search Bar */
+.search input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filters select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+}
+
+.filters button {
+  flex: 0.5;
+  margin: 0;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+}
+
+.task-item {
+  background: #edf2f7;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: #718096;
+}
+
+.task-actions button {
+  margin-left: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* Notifications */
+.notification {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.notification.success {
+  background: #48bb78;
+}
+
+.notification.error {
+  background: #e53e3e;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  textarea {
+    width: 20rem;
+  }
+
+  .search input {
+    margin-top: 0.8rem;
+  }
+}
